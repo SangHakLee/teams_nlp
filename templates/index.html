@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Gabia{% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+    <h1>Name generator</h1>
+</div>
+{{ wtf.quick_form(form) }}
+<div class>
+    <h3>번역: {% if name1 %}{{ name1 }}{% else %}값을 입력하세요!{% endif %}</h3>
+    <h3>로마나이즈: {% if name2 %}{{ name2 }}{% else %}값을 입력하세요!{% endif %}</h3>
+    <h3>유사어: {% if name3 %}{{ name3 }}{% else %}값을 입력하세요!{% endif %}</h3>
+    <h3>결과: {% if name4 %}{{ name4 }}{% else %}짜잔~{% endif %}</h3>        
+</div>
+
+
+{% endblock %}

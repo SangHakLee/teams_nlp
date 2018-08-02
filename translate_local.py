@@ -42,13 +42,7 @@ def index():
         name = form.name.data
         Trans = translate_function(name)[0]
         Rom = translate_function(name)[1]
-
-        # if sim is 0:
-        #     Sim = brooklyn.similar(name)
-        # else :
-        #     Sim = sim
-        # Sim = brooklyn.similar(name) ##
-
+        Sim = brooklyn.similar(name)
 
 
         #form.name.data = ''
@@ -57,4 +51,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
