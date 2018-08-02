@@ -9,6 +9,7 @@
 python v3.x.x
 
 ### pip modules
+- pip install flask
 - pip install flask-bootstrap
 - pip install flask-moment
 - pip install Flask-WTF
@@ -19,9 +20,10 @@ python v3.x.x
 ### nltk
 
 > AttributeError: module 'nltk' has no attribute 'download'
->   - nltk.download()
+> - nltk.download()
+
 > AttributeError: module 'nltk' has no attribute 'word_tokenize'
->   - nltk.download('all')
+> - nltk.download('all')
 
 1. Run python cmd
 1. import
