@@ -5,7 +5,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 from translate_test import translate_function
-from brooklyn import similar
+import brooklyn
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'hard to guess string'
@@ -13,6 +13,7 @@ app.config['SECRET_KEY'] = 'hard to guess string'
 bootstrap = Bootstrap(app)
 moment = Moment(app)
 
+# sim = 0
 
 class NameForm(FlaskForm):
     name = StringField('영단어를 입력하세요:', validators=[DataRequired()])
@@ -41,10 +42,17 @@ def index():
         name = form.name.data
         Trans = translate_function(name)[0]
         Rom = translate_function(name)[1]
-        Sim = similar(name)[10][0] ##
+
+        # if sim is 0:
+        #     Sim = brooklyn.similar(name)
+        # else :
+        #     Sim = sim
+        # Sim = brooklyn.similar(name) ##
+
+
 
         #form.name.data = ''
-    return render_template('index.html', form=form, name1=Trans, name2=Rom, name3=Sim)
+    return render_template('index.html', form=form, name1=Trans, name2=Rom, name3=Sim) ##
 
 
 
